@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Vos Titres</h2>
+    <div class="list-group">
+      <button
+        class="list-group-item"
+        *ngFor="let titre of titres; let i = index"
+        (click)="onViewTitre(i)">
+        <h3 class="list-group-item-heading">
+          {{ titre.title }}
+          <button class="btn btn-default pull-right" (click)="onDeleteTitre(titre)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+        <p class="list-group-item-text">{{ titre.author }}</p>
+      </button>
+    </div>
+    <button class="btn btn-primary" (click)="onNewTitre()">Nouveau Titre</button>
+  </div>
+</div>
